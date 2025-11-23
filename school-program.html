@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Program | UNमNĀ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-blue': '#00A9E0', 'brand-yellow': '#FCD34D',
+                        'brand-dark': '#2D3748', 'brand-light': '#F7FAFC',
+                    },
+                    fontFamily: { 'sans': ['Inter', 'sans-serif'] },
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .nav-link.active { color: #00A9E0; font-weight: 600; }
+    </style>
+</head>
+<body class="bg-white text-brand-dark antialiased">
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- School-Based Program Section -->
+        <section class="py-16 md:py-24 bg-brand-blue text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- Text Content -->
+                    <div>
+                        <span class="text-brand-yellow font-bold text-lg tracking-wider uppercase">Reaching 435 Schools</span>
+                        <h1 class="mt-3 text-4xl md:text-5xl font-bold">
+                            UNमNĀ’S School-Based Program
+                        </h1>
+                        <p class="mt-5 text-lg text-blue-100">
+                            We extend our expertise into educational institutions through a comprehensive program for emotional and academic wellbeing, empowering schools to support students, teachers, and parents holistically.
+                        </p>
+                        <ul class="mt-8 space-y-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-brand-yellow text-xl mt-1 mr-3 flex-shrink-0"></i>
+                                <span><strong>Orientation for Teachers:</strong> Building awareness and fostering empathy.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-brand-yellow text-xl mt-1 mr-3 flex-shrink-0"></i>
+                                <span><strong>Student Screening:</strong> Using standardized tools to understand student needs.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-brand-yellow text-xl mt-1 mr-3 flex-shrink-0"></i>
+                                <span><strong>Workshops for Teachers & Parents:</strong> Applying preventive and supportive strategies.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-brand-yellow text-xl mt-1 mr-3 flex-shrink-0"></i>
+                                <span><strong>Group Workshops for Children:</strong> Enhancing emotional literacy and social skills.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Image -->
+                    <div class="mt-10 md:mt-0">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTAwOTB8MHwxfHNlYXJjaHwxfHxoYXBweSUyMHN0dWRlbnRzJTIwaW4lMjBjbGFzc3Jvb218ZW58MHx8fHwxNjk4MjAyNzE5fDA&ixlib=rb-4.0.3&q=80&w=1080" 
+                             alt="Happy and engaged students in a classroom"
+                             onerror="this.src='https://placehold.co/600x400/FCD34D/2D3748?text=School+Programs'"
+                             class="rounded-2xl shadow-2xl w-full h-auto object-cover aspect-video">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- "How We Help" Details -->
+        <section class="py-16 md:py-24 bg-brand-light">
+             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">Our Process for Schools</h2>
+                    <p class="mt-4 text-lg text-gray-600">Our program is a holistic cycle of support, starting with awareness and moving to identification, intervention, and empowerment.</p>
+                    <ul class="mt-8 space-y-6">
+                        <li class="flex">
+                            <div class="flex-shrink-0 w-12 h-12 bg-brand-blue text-white rounded-full flex items-center justify-center text-xl font-bold">1</div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-semibold text-brand-dark">Orientation & Awareness</h4>
+                                <p class="mt-1 text-gray-600">We begin by aligning with teachers and parents, building awareness of students’ emotional and behavioural needs to foster empathy and enable early identification.</p>
+                            </div>
+                        </li>
+                        <li class="flex">
+                            <div class="flex-shrink-0 w-12 h-12 bg-brand-blue text-white rounded-full flex items-center justify-center text-xl font-bold">2</div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-semibold text-brand-dark">Screening & Reporting</h4>
+                                <p class="mt-1 text-gray-600">Using standardized tools, we conduct student screenings to understand each child’s unique strengths and difficulties, followed by individualized emotional wellbeing reports.</p>
+                            </div>
+                        </li>
+                        <li class="flex">
+                            <div class="flex-shrink-0 w-12 h-12 bg-brand-blue text-white rounded-full flex items-center justify-center text-xl font-bold">3</div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-semibold text-brand-dark">Workshops & Empowerment</h4>
+                                <p class="mt-1 text-gray-600">We empower educators, caregivers, and children with practical insights and strategies through targeted workshops to nurture supportive classrooms and homes.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mt-10 md:mt-0">
+                    <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTAwOTB8MHwxfHNlYXJjaHwxfHx0ZWFjaGVyJTIwd29ya3Nob3B8ZW58MHx8fHwxNjk4MjA0MjgyfDA&ixlib=rb-4.0.3&q=80&w=1080" 
+                         alt="Teachers collaborating in a workshop"
+                         onerror="this.src='https://placehold.co/600x400/FCD34D/2D3748?text=Empowerment'"
+                         class="rounded-2xl shadow-2xl w-full h-auto object-cover aspect-video">
+                </div>
+             </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="main.js"></script>
+</body>
+</html>

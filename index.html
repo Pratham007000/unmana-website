@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNमNĀ – Elevating the Mind | Expert Counselling</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-blue': '#00A9E0', 'brand-yellow': '#FCD34D',
+                        'brand-dark': '#2D3748', 'brand-light': '#F7FAFC',
+                    },
+                    fontFamily: { 'sans': ['Inter', 'sans-serif'] },
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        /* Style for the active navigation link */
+        .nav-link.active {
+            color: #00A9E0; /* brand-blue */
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-white text-brand-dark antialiased">
+
+    <!-- Header will be loaded here by main.js -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Page Content -->
+    <main>
+
+        <!-- Hero Section -->
+        <section class="bg-brand-light pt-16 pb-20 md:pt-24 md:pb-28">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+                <!-- Hero Text -->
+                <div class="text-center md:text-left">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-dark leading-tight">
+                        Expert <span class="text-brand-blue">Counselling</span> to Elevate Your Mind
+                    </h1>
+                    <p class="mt-6 text-lg text-gray-600 max-w-lg mx-auto md:mx-0">
+                        Seeking guidance is a proactive step toward enhancing emotional resilience, gaining clarity, and developing effective life strategies. We're here to help you thrive.
+                    </p>
+                    <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="contact.html" class="bg-brand-blue text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                            Book a Consultation
+                        </a>
+                        <a href="services.html" class="bg-brand-yellow text-brand-dark px-8 py-3 rounded-full font-semibold text-lg hover:bg-yellow-400 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                            Our Services
+                        </a>
+                    </div>
+                </div>
+                <!-- Hero Image -->
+                <div class="mt-10 md:mt-0">
+                    <img src="https://images.unsplash.com/photo-1579546929518-9e396f3a8009?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTAwOTB8MHwxfHNlYXJjaHwxfHxjYWxtJTIwYWJzdHJhY3QlMjBibHVlJTIwYW5kJTIweWVsbG93fGVufDB8fHx8MTY5ODIwMjU2MHww&ixlib=rb-4.0.3&q=80&w=1080" 
+                         alt="Calm abstract blue and yellow background" 
+                         onerror="this.src='https://placehold.co/600x400/00A9E0/FFFFFF?text=Elevate+Your+Mind'"
+                         class="rounded-2xl shadow-2xl w-full h-auto object-cover aspect-video md:aspect-square">
+                </div>
+            </div>
+        </section>
+
+        <!-- "Why Choose UNMNA?" Section -->
+        <section class="py-16 md:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">Why Choose UNमNĀ Counsellors?</h2>
+                    <p class="mt-4 text-lg text-gray-600">
+                        We integrate leading mental healthcare principles with global best practices to make therapy accessible, empathetic, and impactful.
+                    </p>
+                </div>
+                
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="text-center p-6">
+                        <i class="fas fa-hand-holding-heart text-5xl text-brand-blue mb-5"></i>
+                        <h3 class="text-xl font-semibold text-brand-dark mb-2">Empathetic Approach</h3>
+                        <p class="text-gray-600">Warm, non-judgmental, and client-centered care.</p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="text-center p-6">
+                        <i class="fas fa-user-tie text-5xl text-brand-blue mb-5"></i>
+                        <h3 class="text-xl font-semibold text-brand-dark mb-2">Qualified Experts</h3>
+                        <p class="text-gray-600">Experienced professionals in psychology, psychiatry, and counselling.</p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="text-center p-6">
+                        <i class="fas fa-lock text-5xl text-brand-blue mb-5"></i>
+                        <h3 class="text-xl font-semibold text-brand-dark mb-2">Safe & Confidential</h3>
+                        <p class="text-gray-600">Strict adherence to privacy and ethical standards.</p>
+                    </div>
+                    <!-- Feature 4 -->
+                    <div class="text-center p-6">
+                        <i class="fas fa-calendar-check text-5xl text-brand-blue mb-5"></i>
+                        <h3 class="text-xl font-semibold text-brand-dark mb-2">Accessible Care</h3>
+                        <p class="text-gray-600">Flexible appointment options for individuals and families.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- "First Session" CTA Section -->
+        <section class="py-16 md:py-24 bg-brand-light">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-brand-yellow text-brand-dark p-10 md:p-16 rounded-2xl shadow-2xl md:flex justify-between items-center">
+                    <div class="mb-8 md:mb-0">
+                        <h2 class="text-3xl md:text-4xl font-bold">What to Expect in Your First Session</h2>
+                        <ul class="mt-5 space-y-3 text-lg">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-brand-dark mr-3"></i>A warm, welcoming environment for open dialogue.</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-brand-dark mr-3"></i>Discussion of your concerns, history, and goals.</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-brand-dark mr-3"></i>A personalized care plan co-created with you.</li>
+                        </ul>
+                    </div>
+                    <a href="contact.html" class="flex-shrink-0 bg-brand-dark text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                        Take the First Step
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer will be loaded here by main.js -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Main JS file to load components -->
+    <script src="main.js"></script>
+</body>
+</html>

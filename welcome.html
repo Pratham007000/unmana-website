@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to UNमNĀ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            /* 1. Inverted Gradient: Yellow to Blue */
+            background: linear-gradient(135deg, #FCD34D 0%, #00A9E0 100%); 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        /* 2. Glass-like Box Effect */
+        .welcome-container {
+            animation: fadeIn 1s ease-out forwards;
+            opacity: 0;
+            
+            /* Glassmorphism */
+            background: rgba(255, 255, 255, 0.25); /* More translucent */
+            backdrop-filter: blur(10px); /* The "frosted glass" blur */
+            border: 1px solid rgba(255, 255, 255, 0.18); /* Subtle edge */
+            
+            padding: 2.5rem; /* Equivalent to p-10 */
+            border-radius: 1.5rem; /* Equivalent to rounded-2xl */
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1); /* Softer shadow */
+            
+            max-width: 90%;
+            margin: 0 auto;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        /* Logo animation */
+        .logo-fade-in {
+            animation: logoFadeIn 1.5s ease-out 0.5s forwards;
+            opacity: 0;
+            transform: scale(0.9);
+        }
+        @keyframes logoFadeIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Blinking cursor animation */
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        #cursor {
+            animation: blink 0.7s infinite;
+        }
+        /* Class to stop blinking while typing */
+        #cursor.typing {
+            animation: none;
+            opacity: 1;
+        }
+
+        /* Button fade-in animation */
+        #journey-btn {
+            /* Start invisible */
+            opacity: 0; 
+            transform: translateY(10px);
+            /* Define the transition */
+            transition: opacity 1s ease-out, transform 1s ease-out; 
+            visibility: hidden;
+        }
+        #journey-btn.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-container">
+        
+        <!-- Typing Text Container -->
+        <div class="text-3xl md:text-5xl font-bold text-gray-700 mb-8 min-h-[4rem] md:min-h-[auto]">
+            <span id="typing-text"></span><span id="cursor" class="text-gray-700">|</span>
+        </div>
+
+        <!-- Logo -->
+        <img src="logo.png" 
+             alt="UNMNA Logo - Elevating the Mind" 
+             class="w-80 md:w-96 mx-auto logo-fade-in"
+             onerror="this.onerror=null; this.src='https://placehold.co/400x200/FCD34D/2D3748?text=UNMNA+Logo'; this.style.opacity='1'; this.style.transform='scale(1)';"
+        >
+        
+        <!-- "Start Your Journey" Button -->
+        <a href="index.html" 
+           id="journey-btn"
+           class="inline-block bg-brand-blue text-white px-10 py-4 rounded-full font-semibold text-xl hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 mt-12">
+            Start Your Journey
+        </a>
+    </div>
+
+    <script>
+        // Tailwind config for brand colors
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-blue': '#00A9E0',
+                        'brand-yellow': '#FCD34D',
+                        'brand-dark': '#2D3748', 
+                        'brand-light': '#F7FAFC',
+                    },
+                    fontFamily: { 'sans': ['Inter', 'sans-serif'] },
+                }
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const typingElement = document.getElementById('typing-text');
+            const cursorElement = document.getElementById('cursor');
+            const journeyBtn = document.getElementById('journey-btn');
+            
+            const textArray = ["Welcome to", "UNमNĀ", "Elevating the Mind"];
+            const typingSpeed = 100;
+            const deletingSpeed = 50;
+            const pauseDuration = 1500;
+
+            let textIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+
+            function type() {
+                cursorElement.classList.add('typing'); 
+                const currentText = textArray[textIndex];
+
+                if (isDeleting) {
+                    typingElement.textContent = currentText.substring(0, charIndex - 1);
+                    charIndex--;
+                    
+                    if (charIndex === 0) {
+                        isDeleting = false;
+                        textIndex = (textIndex + 1) % textArray.length;
+                        setTimeout(type, 500); 
+                    } else {
+                        setTimeout(type, deletingSpeed);
+                    }
+                } else {
+                    typingElement.textContent = currentText.substring(0, charIndex + 1);
+                    charIndex++;
+
+                    if (charIndex === currentText.length) {
+                        isDeleting = true;
+                        cursorElement.classList.remove('typing');
+                        setTimeout(type, pauseDuration); 
+                    } else {
+                        setTimeout(type, typingSpeed);
+                    }
+                }
+            }
+
+            setTimeout(type, 500);
+
+            setTimeout(() => {
+                journeyBtn.classList.add('fade-in');
+            }, 1500); 
+        });
+    </script>
+</body>
+</html>
