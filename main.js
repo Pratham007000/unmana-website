@@ -71,6 +71,55 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // Function to send the contact form without leaving the page
+    const initContactForm = () => {
+        const form = document.getElementById('contact-form');
+        if (!form) return;
+
+        const button = document.getElementById('contact-submit');
+        const status = document.getElementById('contact-status');
+        const buttonText = button.textContent.trim();
+
+        const showStatus = (message, isError) => {
+            status.textContent = message;
+            status.classList.remove('hidden', 'text-green-700', 'text-red-600');
+            status.classList.add(isError ? 'text-red-600' : 'text-green-700');
+        };
+
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            button.disabled = true;
+            button.textContent = 'Sending...';
+            status.classList.add('hidden');
+
+            try {
+                // FormSubmit's AJAX endpoint is the form action with /ajax/ inserted
+                const ajaxUrl = form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/');
+                const response = await fetch(ajaxUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify(Object.fromEntries(new FormData(form)))
+                });
+                const result = await response.json().catch(() => ({}));
+
+                if (!response.ok || String(result.success) !== 'true') {
+                    throw new Error(result.message || 'Request failed');
+                }
+
+                form.reset();
+                showStatus('Thank you! Your message has been sent. We will get back to you soon.', false);
+            } catch (error) {
+                console.error('Contact form error:', error);
+                showStatus('Sorry, your message could not be sent. Please call 9901210975 or email unmana.mentalhealth@gmail.com.', true);
+            } finally {
+                button.disabled = false;
+                button.textContent = buttonText;
+            }
+        });
+    };
+
+    initContactForm();
+
     // --- Main Execution ---
     // Load header and footer, then init scripts that depend on them
     const loadApp = async () => {
